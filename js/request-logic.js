@@ -3,17 +3,20 @@
 // the function to use it! We hope this is useful to you!
 
 
+
+
 function getContentType(filename) {
   const extension = filename.match(/.*\.([^\.]*)$/)[1];
-  if (filename.includes('.html')) {
-    return "text/html";
-  } else if (filename.includes('.css')) {
-    return "text/css";
-  } else if (filename.includes('.jpeg')) {
-    return "image/jpeg";
-  }  else if (filename.includes('.jpg')) {
-    return "image/jpeg";
-  } else {
-    return "text/plain" ;
+  switch(extension){
+    case "html":
+      return "text/html";
+    case "css":
+      return "text/css";
+    case "jpeg":
+      return "image/jpeg";
+    case "jpg":
+      return "image/jpeg";
+    default:
+      return "text/plain" ;
   }
 }
